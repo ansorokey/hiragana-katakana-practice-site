@@ -10,8 +10,8 @@ canvas.height = window.innerHeight - canvasxOffsetY;
 
 let isPainting = false;
 let lineWidth = 5;
-let startX;
-let startY;
+let startX, endX;
+let startY, endY;
 
 function draw(e) {
     if (!isPainting) return;
@@ -20,6 +20,16 @@ function draw(e) {
     ctx.lineCap = 'round';
 
     ctx.lineTo(e.clientX - canvasxOffsetX, e.clientY);
+    ctx.stroke();
+}
+
+function drawTouch(e) {
+    if (!isPainting) return;
+
+    ctx.lineWidth = lineWidth;
+    ctx.lineCap = 'round';
+
+    ctx.lineTo(e.targetTouches[0].clientX - canvasxOffsetX, e.targetTouches[0].clientY);
     ctx.stroke();
 }
 
@@ -48,9 +58,10 @@ canvas.addEventListener('mousedown', e => {
 });
 
 canvas.addEventListener('touchstart', e => {
+    console.log('touchstart');
     isPainting = true;
-    startX = e.clientX;
-    startY = e.clientY;
+    startX = e.targetTouches[0].clientX;
+    startY = e.targetTouches[0].clientY;
 });
 
 canvas.addEventListener('mouseup', e => {
@@ -60,10 +71,14 @@ canvas.addEventListener('mouseup', e => {
 });
 
 canvas.addEventListener('touchend', e => {
+    console.log('touchend');
     isPainting = false;
     ctx.stroke();
     ctx.beginPath();
 });
 
 canvas.addEventListener('mousemove', draw);
-canvas.addEventListener('touchmove', draw);
+canvas.addEventListener('touchmove', e => {
+    console.log('touchmove');
+    drawTouch(e);
+});
