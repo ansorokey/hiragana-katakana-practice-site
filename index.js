@@ -34,7 +34,7 @@ function drawTouch(e) {
 }
 
 toolbar.addEventListener('click', e => {
-    if (e.target.id === 'clear') {
+    if (e.target.id === 'btnClear') {
         ctx.clearRect(0, 0, canvas.width, canvas.height)
     }
 });
