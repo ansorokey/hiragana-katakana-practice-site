@@ -40,7 +40,7 @@ const studyKanji = [
 ];
 
 let index = 0;
-let studyDeck = studyHira;
+let studyDeck = studyKata;
 let curCard = studyDeck[index];
 
 const hdrName = document.querySelector("#name");
@@ -52,12 +52,16 @@ if (sub in curCard) {
     hdrSub.innerText = "";
 }
 
+const btnNext = document.querySelector("#btnNext");
+
 let isPainting = false;
 let lineWidth = 5;
 let startX, endX;
 let startY, endY;
 
-function nextCard() {
+function nextCard(e) {
+    console.log("next buttn clicked")
+
     index += 1
     if (index >= studyDeck.length) {
         index = 0
@@ -70,6 +74,8 @@ function nextCard() {
         hdrSub.innerText = curCard.sub;
     }
 }
+
+btnNext.addEventListener("click", nextCard)
 
 function draw(e) {
     if (!isPainting) return;
