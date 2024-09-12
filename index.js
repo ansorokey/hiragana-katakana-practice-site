@@ -11,6 +11,18 @@ canvas.height = window.innerHeight - canvasxOffsetY;
 const studyKata = [
     {
         name: "a"
+    },
+    {
+        name: "i"
+    },
+    {
+        name: "u"
+    },
+    {
+        name: "e"
+    },
+    {
+        name: "o"
     }
 ];
 
@@ -28,11 +40,17 @@ const studyKanji = [
 ];
 
 let index = 0;
-
 let studyDeck = studyHira;
+let curCard = studyDeck[index];
 
-const hdrName = querySelector("#name");
-const hdrSub = querySelector("#sub");
+const hdrName = document.querySelector("#name");
+const hdrSub = document.querySelector("#sub");
+hdrName.innerText = curCard.name;
+if (sub in curCard) {
+    hdrSub.innerText = curCard.sub;
+} else {
+    hdrSub.innerText = "";
+}
 
 let isPainting = false;
 let lineWidth = 5;
@@ -45,7 +63,12 @@ function nextCard() {
         index = 0
     }
 
+    curCard = studyDeck[index];
 
+    hdrName.innerText = curCard.name;
+    if (sub in curCard) {
+        hdrSub.innerText = curCard.sub;
+    }
 }
 
 function draw(e) {
