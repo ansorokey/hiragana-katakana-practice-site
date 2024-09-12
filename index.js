@@ -8,10 +8,45 @@ const canvasxOffsetY = canvas.offsetTop;
 canvas.width = window.innerWidth - canvasxOffsetX;
 canvas.height = window.innerHeight - canvasxOffsetY;
 
+const studyKata = [
+    {
+        name: "a"
+    }
+];
+
+const studyHira = [
+    {
+        name: "a"
+    }
+];
+
+const studyKanji = [
+    {
+        name: "One",
+        sub: "ichi"
+    }
+];
+
+let index = 0;
+
+let studyDeck = studyHira;
+
+const hdrName = querySelector("#name");
+const hdrSub = querySelector("#sub");
+
 let isPainting = false;
 let lineWidth = 5;
 let startX, endX;
 let startY, endY;
+
+function nextCard() {
+    index += 1
+    if (index >= studyDeck.length) {
+        index = 0
+    }
+
+
+}
 
 function draw(e) {
     if (!isPainting) return;
