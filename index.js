@@ -45,13 +45,6 @@ let curCard = studyDeck[index];
 
 const hdrName = document.querySelector("#name");
 const hdrSub = document.querySelector("#sub");
-hdrName.innerText = curCard.name;
-if (sub in curCard) {
-    hdrSub.innerText = curCard.sub;
-} else {
-    hdrSub.innerText = "";
-}
-
 const btnNext = document.querySelector("#btnNext");
 
 let isPainting = false;
@@ -59,14 +52,18 @@ let lineWidth = 5;
 let startX, endX;
 let startY, endY;
 
+// Moves to the next card in the deck (currently linear)
 function nextCard(e) {
-    console.log("next buttn clicked")
-
     index += 1
     if (index >= studyDeck.length) {
         index = 0
     }
 
+    setCard()
+}
+
+// Sets the card in the header
+function setCard() {
     curCard = studyDeck[index];
 
     hdrName.innerText = curCard.name;
@@ -146,3 +143,6 @@ canvas.addEventListener('touchmove', e => {
     console.log('touchmove');
     drawTouch(e);
 });
+
+// Display the first card in the deck
+setCard()
