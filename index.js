@@ -29,6 +29,18 @@ const studyKata = [
 const studyHira = [
     {
         name: "a"
+    },
+    {
+        name: "i"
+    },
+    {
+        name: "u"
+    },
+    {
+        name: "e"
+    },
+    {
+        name: "o"
     }
 ];
 
@@ -47,11 +59,31 @@ const hdrName = document.querySelector("#name");
 const hdrSub = document.querySelector("#sub");
 const btnNext = document.querySelector("#btnNext");
 const btnPrev = document.querySelector("#btnPrev");
+const btnHira = document.querySelector("#btnHira");
+const btnKata = document.querySelector("#btnKata");
+// const btnKanji = document.querySelector("#btnKanji");
 
 let isPainting = false;
 let lineWidth = 5;
 let startX, endX;
 let startY, endY;
+
+btnHira.addEventListener('click', () => {
+    studyDeck = studyHira;
+    index = 0;
+    setCard();
+})
+
+btnKata.addEventListener('click', () => {
+    studyDeck = studyKata;
+    index = 0;
+    setCard();
+})
+
+// btnKanji.addEventListener('click', () => {
+//     studyDeck = studyKanji;
+//     setCard();
+// })
 
 // Moves to the next card in the deck (currently linear)
 function nextCard(e) {
