@@ -46,6 +46,7 @@ let curCard = studyDeck[index];
 const hdrName = document.querySelector("#name");
 const hdrSub = document.querySelector("#sub");
 const btnNext = document.querySelector("#btnNext");
+const btnPrev = document.querySelector("#btnPrev");
 
 let isPainting = false;
 let lineWidth = 5;
@@ -63,6 +64,17 @@ function nextCard(e) {
     ctx.clearRect(0, 0, canvas.width, canvas.height)
 }
 
+// Moves to the prev card in the deck (currently linear)
+function prevCard(e) {
+    index -= 1
+    if (index < 0) {
+        index = studyDeck.length - 1
+    }
+
+    setCard()
+    ctx.clearRect(0, 0, canvas.width, canvas.height)
+}
+
 // Sets the card in the header
 function setCard() {
     curCard = studyDeck[index];
@@ -74,6 +86,7 @@ function setCard() {
 }
 
 btnNext.addEventListener("click", nextCard)
+btnPrev.addEventListener("click", prevCard)
 
 function draw(e) {
     if (!isPainting) return;
