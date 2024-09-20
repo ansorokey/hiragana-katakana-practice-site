@@ -60,6 +60,7 @@ function nextCard(e) {
     }
 
     setCard()
+    ctx.clearRect(0, 0, canvas.width, canvas.height)
 }
 
 // Sets the card in the header
