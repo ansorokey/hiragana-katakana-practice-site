@@ -216,5 +216,8 @@ canvas.addEventListener('touchmove', e => {
     drawTouch(e);
 });
 
-// Display the first card in the deck
-setCard()
+// When document is loaded
+document.addEventListener("DOMContentLoaded", () => {
+    // Display the first card in the deck
+    setCard();
+})
