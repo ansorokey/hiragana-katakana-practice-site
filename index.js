@@ -29,12 +29,13 @@ const studyKata = [
 const studyHira = [
     {
         name: "a",
-        src: "/images/a.png",
+        src: "./images/a.png",
         alt: "Hiragana for 'a'"
     },
     {
         name: "i",
-        src: ""
+        src: "",
+        alt: "Hiragana for 'i'"
     },
     {
         name: "u",
@@ -141,7 +142,7 @@ function setCard() {
     }
 
     if ("src" in curCard) {
-        imgStroke.attributes.src = curCard.src;
+        imgStroke.setAttribute('src', curCard.src);
         imgStroke.attributes.alt = curCard.alt;
     }
 }
