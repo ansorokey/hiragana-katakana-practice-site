@@ -28,7 +28,8 @@ const studyKata = [
 
 const studyHira = [
     {
-        name: "a"
+        name: "a",
+        src: "/images/a.png"
     },
     {
         name: "i"
@@ -46,8 +47,24 @@ const studyHira = [
 
 const studyKanji = [
     {
-        name: "One",
-        sub: "ichi"
+        name: "",
+        sub: ""
+    },
+    {
+        name: "",
+        sub: ""
+    },
+    {
+        name: "",
+        sub: ""
+    },
+    {
+        name: "",
+        sub: ""
+    },
+    {
+        name: "",
+        sub: ""
     }
 ];
 
