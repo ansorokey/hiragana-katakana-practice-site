@@ -143,7 +143,7 @@ function setCard() {
 
     if ("src" in curCard) {
         imgStroke.setAttribute('src', curCard.src);
-        imgStroke.attributes.alt = curCard.alt;
+        imgStroke.setAttribute('alt', curCard.alt);
     }
 }
 

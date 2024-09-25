@@ -35,14 +35,19 @@ body {
 
 #img-ctn {
     display: flex;
+    position: absolute;
     align-items: center;
     justify-content: center;
     margin-top: 20vh;
     margin-bottom: 10vh;
+    height: 100%;
+    width: 100%;
 }
 
 #imgStroke {
     background-color: red;
+    height: 100px;
+    width: 100px;
 }
 
 canvas {
