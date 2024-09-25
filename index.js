@@ -32,16 +32,20 @@ const studyHira = [
         src: "/images/a.png"
     },
     {
-        name: "i"
+        name: "i",
+        src: ""
     },
     {
-        name: "u"
+        name: "u",
+        src: ""
     },
     {
-        name: "e"
+        name: "e",
+        src: ""
     },
     {
-        name: "o"
+        name: "o",
+        src: ""
     }
 ];
 
@@ -78,6 +82,7 @@ const btnNext = document.querySelector("#btnNext");
 const btnPrev = document.querySelector("#btnPrev");
 const btnHira = document.querySelector("#btnHira");
 const btnKata = document.querySelector("#btnKata");
+const imgStroke = document.querySelector("#imgStroke");
 // const btnKanji = document.querySelector("#btnKanji");
 
 let isPainting = false;
@@ -131,6 +136,10 @@ function setCard() {
     hdrName.innerText = curCard.name;
     if (sub in curCard) {
         hdrSub.innerText = curCard.sub;
+    }
+
+    if (src in curCard) {
+        imgStroke.src = curCard.src
     }
 }
 
