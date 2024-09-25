@@ -29,7 +29,8 @@ const studyKata = [
 const studyHira = [
     {
         name: "a",
-        src: "/images/a.png"
+        src: "/images/a.png",
+        alt: "Hiragana for 'a'"
     },
     {
         name: "i",
@@ -73,7 +74,7 @@ const studyKanji = [
 ];
 
 let index = 0;
-let studyDeck = studyKata;
+let studyDeck = studyHira;
 let curCard = studyDeck[index];
 
 const hdrName = document.querySelector("#name");
@@ -132,14 +133,16 @@ function prevCard(e) {
 // Sets the card in the header
 function setCard() {
     curCard = studyDeck[index];
+    console.log(curCard)
 
     hdrName.innerText = curCard.name;
-    if (sub in curCard) {
+    if ("sub" in curCard) {
         hdrSub.innerText = curCard.sub;
     }
 
-    if (src in curCard) {
-        imgStroke.src = curCard.src
+    if ("src" in curCard) {
+        imgStroke.attributes.src = curCard.src;
+        imgStroke.attributes.alt = curCard.alt;
     }
 }
 
