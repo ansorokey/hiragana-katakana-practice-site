@@ -4,6 +4,13 @@ hiragana = [
         char: '',
         sound: 'ah',
         imgSrc: '',
-        soundSrc: ''
-    }
+        soundSrc: '',
+    },
+    {
+        name: 'i',
+        char: '',
+        sound: 'ee',
+        imgSrc: '',
+        soundSrc: '',
+    },
 ]
