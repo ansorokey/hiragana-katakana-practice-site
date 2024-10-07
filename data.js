@@ -26,4 +26,11 @@ hiragana = [
         imgSrc: '',
         soundSrc: '',
     },
+    {
+        name: 'o',
+        char: '',
+        sound: 'oh',
+        imgSrc: '',
+        soundSrc: '',
+    },
 ]
