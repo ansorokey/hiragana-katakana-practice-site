@@ -10,17 +10,28 @@ let char = document.querySelector('#char');
 let sound = document.querySelector('#sound');
 
 console.log(currrentDeck[0]);
-header.innerText = currrentDeck[index].name;
-char.innerText = currrentDeck[index].char;
-sound.innerText = currrentDeck[index].sound;
 
-function nextCard() {
-    index += 1;
-    if (index >= currrentDeck.length) index = 0;
-
+function setCard() {
     header.innerText = currrentDeck[index].name;
     char.innerText = currrentDeck[index].char;
     sound.innerText = currrentDeck[index].sound;
 }
 
+function nextCard() {
+    index += 1;
+    if (index >= currrentDeck.length) index = 0;
+
+    setCard();
+}
+
+function prevCard() {
+    index -= 1;
+    if (index < 0) index = currrentDeck.length - 1;
+
+    setCard();
+}
+
 nextButton.addEventListener('click', nextCard);
+prevButton.addEventListener('click', prevCard);
+
+setCard();
