@@ -1,4 +1,4 @@
-hiragana = [
+const hiragana = [
     {
         name: 'a',
         char: '',
@@ -456,3 +456,5 @@ hiragana = [
         soundSrc: '',
     },
 ]
+
+export { hiragana };
