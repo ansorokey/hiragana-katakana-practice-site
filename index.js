@@ -4,6 +4,7 @@ let index = 0;
 let currrentDeck = hiragana;
 
 let nextButton = document.querySelector('#nextButton');
+let randButton = document.querySelector('#randButton');
 let prevButton = document.querySelector('#prevButton');
 let header = document.querySelector('#header');
 let char = document.querySelector('#char');
@@ -31,7 +32,14 @@ function prevCard() {
     setCard();
 }
 
+function randCard() {
+    index = Math.floor(Math.random() * currrentDeck.length);
+
+    setCard();
+}
+
 nextButton.addEventListener('click', nextCard);
 prevButton.addEventListener('click', prevCard);
+randButton.addEventListener('click', randCard);
 
 setCard();
