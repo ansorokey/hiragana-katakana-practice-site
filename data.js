@@ -3,7 +3,7 @@ const hiragana = [
         name: 'a',
         char: 'あ',
         sound: 'ah',
-        imgSrc: '',
+        imgSrc: 'https://res.cloudinary.com/dzntryr5a/image/upload/c_thumb,w_200,g_face/v1728410702/hiragana/rdyomf0bi0jpho81zwo6.png',
         soundSrc: '',
     },
     {

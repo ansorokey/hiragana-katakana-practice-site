@@ -9,6 +9,7 @@ let prevButton = document.querySelector('#prevButton');
 let header = document.querySelector('#header');
 let char = document.querySelector('#char');
 let sound = document.querySelector('#sound');
+let charImg = document.querySelector('#charImg');
 
 console.log(currrentDeck[0]);
 
@@ -16,6 +17,7 @@ function setCard() {
     header.innerText = currrentDeck[index].name;
     char.innerText = currrentDeck[index].char;
     sound.innerText = currrentDeck[index].sound;
+    charImg.setAttribute('src', currrentDeck[index].imgSrc);
 }
 
 function nextCard() {
