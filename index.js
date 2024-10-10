@@ -3,18 +3,17 @@ import { hiragana } from './data.js';
 // ############## CANVAS STUFF #############
 const canvas = document.querySelector('#canvas');
 const ctx = canvas.getContext('2d');
+
+const canvasxOffsetX = document.querySelector('#ctn').offsetLeft;
+const canvasxOffsetY = document.querySelector('#ctn').offsetTop;
+console.log(document.querySelector('#ctn').offsetLeft, document.querySelector('#ctn').offsetTop)
+console.log('x', canvasxOffsetX, 'y', canvasxOffsetY)
+
 canvas.width = 720;
 canvas.height = 605;
 
 let isPainting = false;
 let lineWidth = 10;
-let startX, endX;
-let startY, endY;
-
-
-// Shouldn't need an x offset, full width
-// const canvasxOffsetX = canvas.offsetLeft;
-const canvasxOffsetY = 60;
 
 let index = 0;
 let currrentDeck = hiragana;
@@ -61,12 +60,11 @@ function randCard() {
 }
 
 function drawTouch(e) {
-    if (!isPainting) return;
-
     ctx.lineWidth = lineWidth;
     ctx.lineCap = 'round';
 
-    ctx.lineTo(e.targetTouches[0].clientX, e.targetTouches[0].clientY - canvasxOffsetY);
+    console.log(e.targetTouches[0].clientX)
+    ctx.lineTo(e.targetTouches[0].clientX - canvasxOffsetX, e.targetTouches[0].clientY - canvasxOffsetY);
     ctx.stroke();
 }
 
@@ -75,36 +73,14 @@ function clearCanvas() {
 }
 
 // ##### EVENT LISTENERS #####
-canvas.addEventListener('touchstart', e => {
-    isPainting = true;
-    startX = e.targetTouches[0].clientX;
-    startY = e.targetTouches[0].clientY - canvasxOffsetY;
-});
-
-canvas.addEventListener('mousedown', e => {
-    isPainting = true;
-    startX = e.targetTouches[0].clientX;
-    startY = e.targetTouches[0].clientY - canvasxOffsetY;
+canvas.addEventListener('touchmove', e => {
+    drawTouch(e);
 });
 
 canvas.addEventListener('touchend', e => {
     isPainting = false;
     ctx.stroke();
     ctx.beginPath();
-});
-
-canvas.addEventListener('mouseup', e => {
-    isPainting = false;
-    ctx.stroke();
-    ctx.beginPath();
-});
-
-canvas.addEventListener('touchmove', e => {
-    drawTouch(e);
-});
-
-canvas.addEventListener('mousemove', e => {
-    drawTouch(e);
 });
 
 nextButton.addEventListener('click', nextCard);
