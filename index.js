@@ -13,7 +13,7 @@ canvas.width = 720;
 canvas.height = 605;
 
 let isPainting = false;
-let lineWidth = 10;
+let lineWidth = 20;
 
 let index = 0;
 let currrentDeck = hiragana;
