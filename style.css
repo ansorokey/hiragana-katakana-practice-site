@@ -29,7 +29,7 @@ body {
 .drawingArea {
     font-size: xx-large;
     font-weight: bold;
-    position: relative;
+    /* position: relative; */
     /* top: 200px; */
     height: 605px;
     width: 100%;
@@ -38,22 +38,28 @@ body {
     justify-content: center;
 }
 
+#ctn {
+    position: relative;
+    width: 720px;
+    height: 605px;
+}
+
 #charImg {
     max-width: 720px;
     opacity: 40%;
     border: 1px black dotted;
 
-    /* position: absolute;
+    position: absolute;
     top: 0;
-    left: 0; */
+    left: 0;
 
     object-fit: contain;
 }
 
 #canvas {
-    /* position: absolute;
+    position: absolute;
     top: 0;
-    left: 0; */
+    left: 0;
 
     max-width: 720px;
 
