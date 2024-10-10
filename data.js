@@ -301,10 +301,10 @@ const hiragana = [
       soundSrc: ''
     },
     {
-      name: 'nn',
+      name: 'n',
       char: 'ん',
       sound: 'ng',
-      imgSrc: './images/hiragana/nn.png',
+      imgSrc: './images/hiragana/n.png',
       soundSrc: ''
     },
     {
@@ -399,17 +399,17 @@ const hiragana = [
       soundSrc: ''
     },
     {
-      name: 'di',
+      name: 'ji',
       char: 'ぢ',
-      sound: 'dee',
-      imgSrc: './images/hiragana/di.png',
+      sound: 'djee',
+      imgSrc: './images/hiragana/ji2.png',
       soundSrc: ''
     },
     {
-      name: 'du',
+      name: 'zu',
       char: 'づ',
-      sound: 'dooh',
-      imgSrc: './images/hiragana/du.png',
+      sound: 'zhooh',
+      imgSrc: './images/hiragana/zu2.png',
       soundSrc: ''
     },
     {

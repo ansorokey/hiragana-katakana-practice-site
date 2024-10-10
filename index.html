@@ -7,14 +7,23 @@
     <title>Practice</title>
 </head>
 <body>
-    <button id="prevButton">Prev</button>
-    <button id="randButton">Random</button>
-    <button id="nextButton">Next</button>
-    <div class="card">
-        <div id="header">Loading...</div>
-        <div id="char">Loading...</div>
-        <div id="sound">Loading...</div>
-        <img id="charImg" src="" />
+    <div id="canvasContainer">
+        <div class="charInfo">
+            <div id="header">Loading...</div>
+            <div id="char">Loading...</div>
+            <div id="sound">Loading...</div>
+        </div>
+        
+        <div class="drawingArea">
+            <img id="charImg" src="" />
+            <canvas id="canvas"></canvas>
+        </div>
+    </div>
+
+    <div id="buttonBar">
+        <button id="prevButton">Prev</button>
+        <button id="randButton">Random</button>
+        <button id="nextButton">Next</button>
     </div>
     <script src="./index.js" type="module"></script>
 </body>
