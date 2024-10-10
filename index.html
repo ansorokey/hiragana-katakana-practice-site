@@ -1,27 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="w-full h-full">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Practice</title>
 </head>
-<body>
-    <div id="canvasContainer">
-        <div class="charInfo">
-            <div id="header">Loading...</div>
-            <div id="char">Loading...</div>
-            <div id="sound">Loading...</div>
-            <button id="clearButton">Clear</button>
-        </div>
-
-        <div class="drawingArea">
-            <img id="charImg" class="w-full h-full" src="" />
-            <canvas id="canvas" class="w-full h-full"></canvas>
-        </div>
+<body class="w-full h-full">
+    
+    <div id="charInfo" class="bar">
+        <div id="header">Loading...</div>
+        <div id="char">Loading...</div>
+        <div id="sound">Loading...</div>
+        <button id="clearButton">Clear</button>
     </div>
 
-    <div id="buttonBar">
+    <div class="drawingArea">
+        <img id="charImg" class="w-full h-full" src="" />
+        <canvas id="canvas" class="w-full h-full"></canvas>
+    </div>
+
+    <div id="buttonBar" class="bar">
         <button id="prevButton">Prev</button>
         <button id="randButton">Random</button>
         <button id="nextButton">Next</button>
