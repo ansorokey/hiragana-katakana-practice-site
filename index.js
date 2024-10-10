@@ -29,8 +29,7 @@ let sound = document.querySelector('#sound');
 let charImg = document.querySelector('#charImg');
 
 
-console.log(currrentDeck[0]);
-
+// ##### FUNCTIONS #####
 function setCard() {
     header.innerText = currrentDeck[index].name;
     char.innerText = currrentDeck[index].char;
@@ -77,21 +76,34 @@ function clearCanvas() {
 
 // ##### EVENT LISTENERS #####
 canvas.addEventListener('touchstart', e => {
-    console.log('touchstart');
+    isPainting = true;
+    startX = e.targetTouches[0].clientX;
+    startY = e.targetTouches[0].clientY - canvasxOffsetY;
+});
+
+canvas.addEventListener('mousedown', e => {
     isPainting = true;
     startX = e.targetTouches[0].clientX;
     startY = e.targetTouches[0].clientY - canvasxOffsetY;
 });
 
 canvas.addEventListener('touchend', e => {
-    console.log('touchend');
+    isPainting = false;
+    ctx.stroke();
+    ctx.beginPath();
+});
+
+canvas.addEventListener('mouseup', e => {
     isPainting = false;
     ctx.stroke();
     ctx.beginPath();
 });
 
 canvas.addEventListener('touchmove', e => {
-    console.log('touchmove');
+    drawTouch(e);
+});
+
+canvas.addEventListener('mousemove', e => {
     drawTouch(e);
 });
 
