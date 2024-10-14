@@ -18,6 +18,7 @@
     margin: 0;
     padding: 0;
     overscroll-behavior-y: contain;
+    max-width: 720px;
 }
 
 body {
